@@ -78,14 +78,26 @@
       <label for="time">Ora:</label>
       <input type="time" id="time" required>
 
-      <label for="lawyer">Avvocato:</label>
+      <!-- <label for="lawyer">Avvocato:</label>
       <select id="lawyer" required>
         <option value="">-- Seleziona --</option>
         <option value="Avv. Erminio">Avv. Erminio</option>
         <option value="Notaio. Federico d'uva">Federico d'uva</option>
         <option value="Avv. Montana"></option>
-      </select>
-
+      </select> -->
+        <label for="lawyer">Avvocato / Servizio:</label>
+        <select id="lawyer" required>
+          <option value="">-- Seleziona --</option>
+        
+          <optgroup label="Avvocati">
+            <option value="Avv. Erminio">Avv. Erminio</option>
+            <option value="Avv. Montana">Avv. Montana</option>
+          </optgroup>
+        
+          <optgroup label="Notai">
+            <option value="Notaio Federico d'Uva">Federico d'Uva</option>
+          </optgroup>
+        </select>
       <label for="reason">Motivazione:</label>
       <textarea id="reason" rows="4" required></textarea>
       
@@ -141,6 +153,7 @@
   </script>
 </body>
 </html>
+
 
 
 
