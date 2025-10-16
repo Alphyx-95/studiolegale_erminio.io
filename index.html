@@ -119,16 +119,23 @@
       const phone = document.getElementById('phone').value;
       const date = document.getElementById('date').value;
       const time = document.getElementById('time').value;
-      const lawyer = document.getElementById('lawyer').value;
+      
       const reason = document.getElementById('reason').value;
       const player = document.getElementById('player').value;
+      const lawyerSelect = document.getElementById('lawyer');
+      const lawyer = lawyerSelect.value;
+      const role = lawyerSelect.options[lawyerSelect.selectedIndex].dataset.role || 'Professionista';
       
 
       const webhookURL = "https://discord.com/api/webhooks/1428364707449933936/M4WeWXglJCC51AFBhjpImjRFiwDsTeziAn_DsewSBzO2sJ7iT1Z8WxqjHmyc1YiDWyCc";
 
+      // const message = {
+      //   content: `📅 **Nuova Prenotazione Studio Legale Erminio**\n\n👤 **Cliente:** ${name}\n📱 **phone:**${phone}\n📆 **Data:** ${date}\n⏰ **Ora:** ${time}\n⚖️ **Avvocato:** ${lawyer}\n📝 **Motivazione:** ${reason}\n👤 ** Giocatore: ** ${player} `
+      // };
       const message = {
-        content: `📅 **Nuova Prenotazione Studio Legale Erminio**\n\n👤 **Cliente:** ${name}\n📱 **phone:**${phone}\n📆 **Data:** ${date}\n⏰ **Ora:** ${time}\n⚖️ **Avvocato:** ${lawyer}\n📝 **Motivazione:** ${reason}\n👤 ** Giocatore: ** ${player} `
-      };
+  content: `📅 **Nuova Prenotazione Studio Legale Erminio**\n\n👤 **Cliente:** ${name}\n📱 **Telefono:** ${phone}\n📆 **Data:** ${date}\n⏰ **Ora:** ${time}\n⚖️ **${role}:** ${lawyer}\n📝 **Motivazione:** ${reason}\n👤 **Giocatore:** ${player}`
+};
+
 
       try {
         const response = await fetch(webhookURL, {
@@ -153,6 +160,7 @@
   </script>
 </body>
 </html>
+
 
 
 
